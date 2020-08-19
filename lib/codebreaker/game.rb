@@ -13,15 +13,15 @@ module Codebreaker
     end
 
     def guess(guess)
-      mark = ''
-      (0..3).each do |index|
-        if exact_match?(guess, index)
-          mark += '+'
-        elsif number_match?(guess, index)
-          mark += '-'
-        end
-      end
-      @output.puts mark.chars.sort.join
+      @output.puts '+' * exact_match_count(guess) + '-' * number_match_count(guess)
+    end
+
+    def exact_match_count(guess)
+      (0..3).reduce(0) { |count, index| count + (exact_match?(guess, index) ? 1 : 0) }
+    end
+
+    def number_match_count(guess)
+      (0..3).reduce(0) { |count, index| count + (number_match?(guess, index) ? 1 : 0) }
     end
 
     def exact_match?(guess, index)
