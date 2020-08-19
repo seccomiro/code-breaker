@@ -42,3 +42,5 @@ Style/ClassAndModuleChildren:
   Enabled: false
 Metrics/BlockLength:
   Enabled: false
+Lint/AssignmentInCondition:
+  Enabled: false
