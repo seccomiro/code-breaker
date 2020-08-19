@@ -40,3 +40,5 @@ Style/HashTransformValues:
   Enabled: false
 Style/ClassAndModuleChildren:
   Enabled: false
+Metrics/BlockLength:
+  Enabled: false
